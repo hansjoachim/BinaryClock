@@ -8,3 +8,9 @@ function convertTime(timestamp) {
   second = converter(timestamp.getSeconds());
   return hour + ":" + minute + ":" + second;
 }
+
+function tick() {
+  document.getElementById('clock').innerHTML = convertTime(new Date());
+}
+
+
