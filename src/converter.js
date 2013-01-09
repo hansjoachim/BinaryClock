@@ -16,6 +16,7 @@ var BinaryClock = {};
 
   B.tick = function () {
     document.getElementById('clock').innerHTML = B.convertTime(new Date());
+    setTimeout(function () { B.tick() }, 1000);
   }
 
 })(BinaryClock);
