@@ -1,3 +1,2 @@
 use settimeout to update the clock as time passes
-move the js functions into a namespace
 use css to make it look prettier

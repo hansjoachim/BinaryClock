@@ -1,16 +1,21 @@
-function converter(number) {
-  return number.toString(2);
-}
+var BinaryClock = {};
 
-function convertTime(timestamp) {
-  hour = converter(timestamp.getHours());
-  minute = converter(timestamp.getMinutes());
-  second = converter(timestamp.getSeconds());
-  return hour + ":" + minute + ":" + second;
-}
+(function (B) {
+  "use strict";
 
-function tick() {
-  document.getElementById('clock').innerHTML = convertTime(new Date());
-}
+  B.converter = function(number) {
+    return number.toString(2);
+  }
 
+  B.convertTime = function(timestamp) {
+    var hour = B.converter(timestamp.getHours());
+    var minute = B.converter(timestamp.getMinutes());
+    var second = B.converter(timestamp.getSeconds());
+    return hour + ":" + minute + ":" + second;
+  }
 
+  B.tick = function () {
+    document.getElementById('clock').innerHTML = B.convertTime(new Date());
+  }
+
+})(BinaryClock);
