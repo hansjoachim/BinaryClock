@@ -3,7 +3,11 @@ Binary clock
 (WORK IN PROGRESS)
 
 
-Use:
+License:
+BSD 2-clause (see LICENSE for details)
+
+
+Usage:
 No external dependencies needed. Simply open index.html in your favorite web
 browser.
 
