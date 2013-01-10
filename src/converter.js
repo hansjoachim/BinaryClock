@@ -3,8 +3,12 @@ var BinaryClock = {};
 (function (B) {
   "use strict";
 
+  //Returns the binary form of a number.
+  //Always returns six characters (prepends smaller numbers with 0)
   B.converter = function(number) {
-    return number.toString(2);
+    var rv = "000000" + number.toString(2);
+    
+    return rv.substring(rv.length - 6);
   }
 
   B.convertTime = function(timestamp) {
