@@ -4,11 +4,16 @@
 
   buster.testCase("Converter", {
     "converts from decimal to binary numbers": function () {
-      assert.equals(B.converter(5), 101);
+      assert.equals(B.converter(5), "000101");
     },
 
     "zero is still zero after being converted": function () {
-      assert.equals(B.converter(0), 0);
+      assert.equals(B.converter(0), "000000");
+    },
+ 
+    "converted number is returned as a string": function () {
+      var number = B.converter(3);
+      assert.equals(typeof number, "string");
     },
 
     "always prepend additional zeros to get consistent with": function () {

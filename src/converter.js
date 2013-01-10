@@ -3,8 +3,9 @@ var BinaryClock = {};
 (function (B) {
   "use strict";
 
-  //Returns the binary form of a number.
+  //Returns a string containing the binary form of a number.
   //Always returns six characters (prepends smaller numbers with 0)
+  //Example converter(2) -> "000010"
   B.converter = function(number) {
     var rv = "000000" + number.toString(2);
     
