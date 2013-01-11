@@ -14,7 +14,9 @@ You need node and buster.js to run the tests.
 Install node and npm (node's package manager):
 
     sudo apt-get install nodejs npm
-    Install buster.js:
+
+Install buster.js:
+
     sudo npm install -g busterjs
 
 
@@ -23,11 +25,7 @@ Open a terminal and start buster:
 
     buster server
 
-Open a web browser, go to 
-
-    localhost:1111
-
-and click "Capture browser".
+Open a web browser, go to http://localhost:1111/ and click "Capture browser".
 (Repeat this step if you want to test with multiple browsers.)
 To run the tests, open another terminal and run:
 
