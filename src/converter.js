@@ -20,11 +20,13 @@ var BinaryClock = {};
   }
 
   B.tick = function () {
-    document.getElementById('clock').innerHTML = B.convertTime(new Date());
-    B.render();
+    var calculatedTime = B.convertTime(new Date());
+    B.render(calculatedTime);
   }
 
-  B.render = function () {}
+  B.render = function (text) {
+    document.getElementById('clock').innerHTML = text; 
+  }
 
 })(BinaryClock);
 

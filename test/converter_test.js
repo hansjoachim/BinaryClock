@@ -27,13 +27,14 @@
       assert.equals(B.convertTime(timestamp), "000010:000011:000100");
     },
 
-    "tick should write the current time on the page": function () {
+    "renders a specific text on the page": function () {
       //TODO: move out some of all this setup, and/or split the tests into multiple files
       var clock = document.createElement("div");
       clock.id = "clock";
       document.body.appendChild(clock);
-      B.tick();
-      assert(clock.innerHTML.indexOf(":") > 0);
+
+      B.render("hello world");
+      assert.equals(clock.innerHTML, "hello world");
     },
 
     "tick should ensure the calculated time is rendered": function () {
@@ -44,7 +45,16 @@
 
       B.tick();
       assert.calledOnce(B.render);
-    }
+    },
+
+    "tick should write the current time on the page": function () {
+      var clock = document.createElement("div");
+      clock.id = "clock";
+      document.body.appendChild(clock);
+
+      B.tick();
+      assert(clock.innerHTML.indexOf(":") > 0);
+   }
 
   });
 
