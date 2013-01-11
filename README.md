@@ -11,13 +11,17 @@ browser.
 
 ##Development
 You need node and buster.js to run the tests.
-Install node and npm (node's package manager):
+Install node and npm (node's package manager). Some packages also requires a
+C++ compiler:
 
-    sudo apt-get install nodejs npm
+    sudo apt-get install nodejs npm g++
 
-Install buster.js:
+**Note**: If you are running Ubuntu 12.10 or a later release, you will need to
+install `nodejs-legacy` too.
 
-    sudo npm install -g busterjs
+Now install buster.js:
+
+    sudo npm install -g buster
 
 
 ##To run the tests
