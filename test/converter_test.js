@@ -25,6 +25,15 @@
     "convert timestamp to binary time": function () {
       var timestamp = new Date(2013, 1, 1, 2, 3, 4);
       assert.equals(B.convertTime(timestamp), "000010:000011:000100");
+    },
+
+    "tick should write the current time on the page": function () {
+      //TODO: move out some of all this setup, and/or split the tests into multiple files
+      var clock = document.createElement("div");
+      clock.id = "clock";
+      document.body.appendChild(clock);
+      B.tick();
+      assert(clock.innerHTML.indexOf(":") > 0);
     }
   });
 
