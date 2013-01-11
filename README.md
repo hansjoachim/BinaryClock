@@ -25,7 +25,7 @@ Open a terminal and start buster:
 
     buster server
 
-Open a web browser, go to http://localhost:1111/ and click "Capture browser".
+Open a web browser, go to [http://localhost:1111/](http://localhost:1111/) and click "Capture browser".
 (Repeat this step if you want to test with multiple browsers.)
 To run the tests, open another terminal and run:
 
