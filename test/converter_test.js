@@ -34,7 +34,18 @@
       document.body.appendChild(clock);
       B.tick();
       assert(clock.innerHTML.indexOf(":") > 0);
+    },
+
+    "tick should ensure the calculated time is rendered": function () {
+      var clock = document.createElement("div");
+      clock.id = "clock";
+      document.body.appendChild(clock);
+      this.stub(B, "render");
+
+      B.tick();
+      assert.calledOnce(B.render);
     }
+
   });
 
 })(BinaryClock);
