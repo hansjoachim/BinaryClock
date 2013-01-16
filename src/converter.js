@@ -20,8 +20,14 @@ var BinaryClock = {};
   }
 
   B.tick = function () {
-    var calculatedTime = B.convertTime(new Date());
-    B.render(calculatedTime);
+    var currentTime = new Date();
+    var calculatedTime = B.convertTime(currentTime);
+    B.render(calculatedTime +
+             "<p>" +
+               currentTime.getHours() + ":" +
+               currentTime.getMinutes() + ":" +
+               currentTime.getSeconds() +
+             "</p>");
   }
 
   B.render = function (text) {

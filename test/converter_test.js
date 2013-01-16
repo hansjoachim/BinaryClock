@@ -47,6 +47,11 @@
       assert.calledOnce(B.render);
     },
 
+    //TODO: find some better strategy to ensure we get the expected text.
+    //Could check the format with regexp, but that sounds messy.
+    //Since it calculates time, we could mock the current time in some
+    //way since otherwise it won't have a consistent expected value. 
+
     "tick should write the current time on the page": function () {
       var clock = document.createElement("div");
       clock.id = "clock";
@@ -54,7 +59,16 @@
 
       B.tick();
       assert(clock.innerHTML.indexOf(":") > 0);
-   }
+   },
+
+   "Ensure the display includes a paragraph with the time in normal style": function () {
+      var clock = document.createElement("div");
+      clock.id = "clock";
+      document.body.appendChild(clock);
+
+      B.tick();
+      assert(clock.innerHTML.indexOf("<p>") > 0);
+    }
 
   });
 
