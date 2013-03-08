@@ -19,6 +19,23 @@ var BinaryClock = {};
     return hour + ":" + minute + ":" + second;
   }
 
+  /**
+  * Prepends a number of zeros ('0') to any text to make sure it fills up the
+  * minimum length.
+  * Yes, this could be generalized a lot more and allow it to specify the
+  * characther being padded, but it works for this use case.
+  *
+  * Parameters:
+  * text - the text in question
+  * number_of_characters - will prepend zeros until the text reaches this length
+  */
+  B.padWithZeros = function(text, number_of_characters) {
+    while(text.length < number_of_characters) {
+      text = "0" + text;
+    }
+    return text;
+  }
+
   B.tick = function () {
     var currentTime = new Date();
     var calculatedTime = B.convertTime(currentTime);

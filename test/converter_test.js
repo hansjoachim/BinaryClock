@@ -22,6 +22,22 @@
       assert.equals(small_number.length, large_number.length);
     },
 
+    "pads with zeros": function () {
+      var number = 1;
+      var expected = "001";
+      assert.equals(B.padWithZeros(number, 3), expected);
+    },
+
+    "doesn't pad already long enough texts": function () {
+      var number = 1111;
+      assert.equals(B.padWithZeros(number, 4), "1111");
+    },
+
+    "doesn't pad texts which are longer than specified": function () {
+      var number = 1111;
+      assert.equals(B.padWithZeros(number, 2), "1111");
+    },
+
     "convert timestamp to binary time": function () {
       var timestamp = new Date(2013, 1, 1, 2, 3, 4);
       assert.equals(B.convertTime(timestamp), "000010:000011:000100");
