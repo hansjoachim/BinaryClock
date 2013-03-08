@@ -13,6 +13,11 @@
   margin: 2em auto;
   padding: 1em;
   text-align: center;
+  /* fall back to prefixed transitions for Chromium and Safari since their
+     latest stable releases lack the unprefixed version */
+  -webkit-transition-property: height;
+  -webkit-transition-duration: 1s;
+  -webkit-transition-animation: ease;
   transition-property: height;
   transition-duration: 1s;
   transition-animation: ease;
